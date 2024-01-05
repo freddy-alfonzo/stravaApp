@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import { Activity } from "../models/activityModels";
 
+const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN
 const useApi = (
   url: string,
   before = null as null | string,
@@ -18,7 +19,7 @@ const useApi = (
             `${url}?before=${before}&after=${after}`,
             {
               headers: {
-                Authorization: `Bearer 38dd14ec6ecdf59367529209653d160633ad3286`,
+                Authorization: `Bearer ${ACCESS_TOKEN}`,
               },
             }
           );
@@ -26,7 +27,7 @@ const useApi = (
         } else {
           const response = await axios.get(url, {
             headers: {
-              Authorization: `Bearer 38dd14ec6ecdf59367529209653d160633ad3286`,
+              Authorization: `Bearer ${ACCESS_TOKEN}`,
             },
           });
           setData(response.data);
