@@ -9,7 +9,7 @@ const ActivitiesPage = () => {
   let before = searchParams.get("before");
 
   const { data: activities } = useApi(
-    `https://www.strasdasdava.com/api/v3/athlete/activities`,
+    `https://www.strava.com/api/v3/athlete/activities`,
     before,
     after
   );

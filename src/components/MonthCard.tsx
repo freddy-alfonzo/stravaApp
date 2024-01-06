@@ -11,7 +11,7 @@ interface MonthCardProps {
 const MonthCard = ({ month, monthInt }: MonthCardProps) => {
   const [thisMonth, nextMonth] = getThisAndNextMonthTime(monthInt);
   const { data: activities } = useApi(
-    `https://www.straasdasdva.com/api/v3/athlete/activities?before=${nextMonth}&after=${thisMonth}`
+    `https://www.strava.com/api/v3/athlete/activities?before=${nextMonth}&after=${thisMonth}`
   );
 
   let totalDistance = 0;
